@@ -1,0 +1,712 @@
+{
+	"schemaVersion": "2.0",
+	"id": 0,
+	"name": "@anvilkit/analytics-react",
+	"variant": "project",
+	"kind": 1,
+	"flags": {},
+	"children": [
+		{
+			"id": 9,
+			"name": "AnalyticsContextValue",
+			"variant": "declaration",
+			"kind": 256,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "The value carried by "
+					},
+					{
+						"kind": "inline-tag",
+						"tag": "@link",
+						"text": "AnalyticsContext",
+						"target": {
+							"packageName": "@anvilkit/analytics-react",
+							"packagePath": "src/context.ts",
+							"qualifiedName": "AnalyticsContext"
+						}
+					},
+					{
+						"kind": "text",
+						"text": "."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 10,
+					"name": "adapter",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isReadonly": true
+					},
+					"type": {
+						"type": "reference",
+						"target": {
+							"packageName": "@anvilkit/analytics-core",
+							"packagePath": "src/types.ts",
+							"qualifiedName": "AnalyticsAdapter"
+						},
+						"name": "AnalyticsAdapter",
+						"package": "@anvilkit/analytics-core"
+					}
+				},
+				{
+					"id": 11,
+					"name": "context",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true,
+						"isReadonly": true
+					},
+					"type": {
+						"type": "reference",
+						"target": 8,
+						"name": "AnalyticsBaseContext",
+						"package": "@anvilkit/analytics-react"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						10,
+						11
+					]
+				}
+			]
+		},
+		{
+			"id": 4,
+			"name": "AnalyticsProviderProps",
+			"variant": "declaration",
+			"kind": 256,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Props for "
+					},
+					{
+						"kind": "inline-tag",
+						"tag": "@link",
+						"text": "AnalyticsProvider",
+						"target": 1
+					},
+					{
+						"kind": "text",
+						"text": "."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 5,
+					"name": "adapter",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isReadonly": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Transport adapter from "
+							},
+							{
+								"kind": "code",
+								"text": "`@anvilkit/analytics-core`"
+							},
+							{
+								"kind": "text",
+								"text": " (Http/GA4/PostHog/…)."
+							}
+						]
+					},
+					"type": {
+						"type": "reference",
+						"target": {
+							"packageName": "@anvilkit/analytics-core",
+							"packagePath": "src/types.ts",
+							"qualifiedName": "AnalyticsAdapter"
+						},
+						"name": "AnalyticsAdapter",
+						"package": "@anvilkit/analytics-core"
+					}
+				},
+				{
+					"id": 7,
+					"name": "children",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isReadonly": true
+					},
+					"type": {
+						"type": "reference",
+						"target": {
+							"packageName": "@types/react",
+							"packagePath": "index.d.ts",
+							"qualifiedName": "React.ReactNode"
+						},
+						"name": "ReactNode",
+						"package": "@types/react",
+						"qualifiedName": "React.ReactNode"
+					}
+				},
+				{
+					"id": 6,
+					"name": "context",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true,
+						"isReadonly": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Optional base context merged into every event."
+							}
+						]
+					},
+					"type": {
+						"type": "reference",
+						"target": 8,
+						"name": "AnalyticsBaseContext",
+						"package": "@anvilkit/analytics-react"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						5,
+						7,
+						6
+					]
+				}
+			]
+		},
+		{
+			"id": 8,
+			"name": "AnalyticsBaseContext",
+			"variant": "declaration",
+			"kind": 2097152,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Base context the provider merges into every tracked event."
+					}
+				]
+			},
+			"type": {
+				"type": "reference",
+				"target": {
+					"packageName": "typescript",
+					"packagePath": "lib/lib.es5.d.ts",
+					"qualifiedName": "Pick"
+				},
+				"typeArguments": [
+					{
+						"type": "reference",
+						"target": {
+							"packageName": "@anvilkit/analytics-core",
+							"packagePath": "src/types.ts",
+							"qualifiedName": "BaseEventData"
+						},
+						"name": "BaseEventData",
+						"package": "@anvilkit/analytics-core"
+					},
+					{
+						"type": "union",
+						"types": [
+							{
+								"type": "literal",
+								"value": "source"
+							},
+							{
+								"type": "literal",
+								"value": "workspace_id"
+							},
+							{
+								"type": "literal",
+								"value": "user_id"
+							}
+						]
+					}
+				],
+				"name": "Pick",
+				"package": "typescript"
+			}
+		},
+		{
+			"id": 12,
+			"name": "TrackFn",
+			"variant": "declaration",
+			"kind": 2097152,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "A tracker bound to the provider."
+					}
+				]
+			},
+			"type": {
+				"type": "reflection",
+				"declaration": {
+					"id": 13,
+					"name": "__type",
+					"variant": "declaration",
+					"kind": 65536,
+					"flags": {},
+					"signatures": [
+						{
+							"id": 14,
+							"name": "__type",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"parameters": [
+								{
+									"id": 15,
+									"name": "eventName",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 16,
+									"name": "properties",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "reference",
+										"target": {
+											"packageName": "typescript",
+											"packagePath": "lib/lib.es5.d.ts",
+											"qualifiedName": "Record"
+										},
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											},
+											{
+												"type": "union",
+												"types": [
+													{
+														"type": "intrinsic",
+														"name": "string"
+													},
+													{
+														"type": "intrinsic",
+														"name": "number"
+													},
+													{
+														"type": "intrinsic",
+														"name": "boolean"
+													}
+												]
+											}
+										],
+										"name": "Record",
+										"package": "typescript"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				}
+			}
+		},
+		{
+			"id": 1,
+			"name": "AnalyticsProvider",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"comment": {
+				"summary": [],
+				"blockTags": [
+					{
+						"tag": "@file",
+						"content": [
+							{
+								"kind": "text",
+								"text": "Public barrel for "
+							},
+							{
+								"kind": "code",
+								"text": "`@anvilkit/analytics-react`"
+							},
+							{
+								"kind": "text",
+								"text": " — the React consumer API\nover "
+							},
+							{
+								"kind": "code",
+								"text": "`@anvilkit/analytics-core`"
+							},
+							{
+								"kind": "text",
+								"text": ". The core stays React-free; this package\ncarries the "
+							},
+							{
+								"kind": "code",
+								"text": "`react`"
+							},
+							{
+								"kind": "text",
+								"text": "/"
+							},
+							{
+								"kind": "code",
+								"text": "`react-dom`"
+							},
+							{
+								"kind": "text",
+								"text": " peers."
+							}
+						]
+					}
+				]
+			},
+			"signatures": [
+				{
+					"id": 2,
+					"name": "AnalyticsProvider",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Provides an "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "AnalyticsAdapter",
+								"target": {
+									"packageName": "@anvilkit/analytics-core",
+									"packagePath": "src/types.ts",
+									"qualifiedName": "AnalyticsAdapter"
+								}
+							},
+							{
+								"kind": "text",
+								"text": " (and optional base context) to the tree.\nUsable at the "
+							},
+							{
+								"kind": "code",
+								"text": "`<Studio>`"
+							},
+							{
+								"kind": "text",
+								"text": " composition root and at a published-site root."
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 3,
+							"name": "__namedParameters",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"target": 4,
+								"name": "AnalyticsProviderProps",
+								"package": "@anvilkit/analytics-react"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": {
+							"packageName": "@types/react",
+							"packagePath": "index.d.ts",
+							"qualifiedName": "React.ReactElement"
+						},
+						"name": "ReactElement",
+						"package": "@types/react",
+						"qualifiedName": "React.ReactElement"
+					}
+				}
+			]
+		},
+		{
+			"id": 17,
+			"name": "useAnalytics",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"signatures": [
+				{
+					"id": 18,
+					"name": "useAnalytics",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The active "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "AnalyticsAdapter",
+								"target": {
+									"packageName": "@anvilkit/analytics-core",
+									"packagePath": "src/types.ts",
+									"qualifiedName": "AnalyticsAdapter"
+								}
+							},
+							{
+								"kind": "text",
+								"text": ", or a safe no-op adapter when no\n"
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "AnalyticsProvider",
+								"target": 1
+							},
+							{
+								"kind": "text",
+								"text": " is mounted."
+							}
+						]
+					},
+					"type": {
+						"type": "reference",
+						"target": {
+							"packageName": "@anvilkit/analytics-core",
+							"packagePath": "src/types.ts",
+							"qualifiedName": "AnalyticsAdapter"
+						},
+						"name": "AnalyticsAdapter",
+						"package": "@anvilkit/analytics-core"
+					}
+				}
+			]
+		},
+		{
+			"id": 19,
+			"name": "useTrack",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"signatures": [
+				{
+					"id": 20,
+					"name": "useTrack",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Returns a "
+							},
+							{
+								"kind": "code",
+								"text": "`track(eventName, properties?)`"
+							},
+							{
+								"kind": "text",
+								"text": " bound to the provider, merging the\nprovider's base context. A genuine no-op (no adapter call) when no\n"
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "AnalyticsProvider",
+								"target": 1
+							},
+							{
+								"kind": "text",
+								"text": " is mounted."
+							}
+						]
+					},
+					"type": {
+						"type": "reference",
+						"target": 12,
+						"name": "TrackFn",
+						"package": "@anvilkit/analytics-react"
+					}
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Interfaces",
+			"children": [
+				9,
+				4
+			]
+		},
+		{
+			"title": "Type Aliases",
+			"children": [
+				8,
+				12
+			]
+		},
+		{
+			"title": "Functions",
+			"children": [
+				1,
+				17,
+				19
+			]
+		}
+	],
+	"packageName": "@anvilkit/analytics-react",
+	"symbolIdMap": {
+		"0": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/index.ts",
+			"qualifiedName": ""
+		},
+		"1": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/AnalyticsProvider.tsx",
+			"qualifiedName": "AnalyticsProvider"
+		},
+		"2": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/AnalyticsProvider.tsx",
+			"qualifiedName": "AnalyticsProvider"
+		},
+		"3": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/AnalyticsProvider.tsx",
+			"qualifiedName": "__0"
+		},
+		"4": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/AnalyticsProvider.tsx",
+			"qualifiedName": "AnalyticsProviderProps"
+		},
+		"5": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/AnalyticsProvider.tsx",
+			"qualifiedName": "AnalyticsProviderProps.adapter"
+		},
+		"6": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/AnalyticsProvider.tsx",
+			"qualifiedName": "AnalyticsProviderProps.context"
+		},
+		"7": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/AnalyticsProvider.tsx",
+			"qualifiedName": "AnalyticsProviderProps.children"
+		},
+		"8": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/context.ts",
+			"qualifiedName": "AnalyticsBaseContext"
+		},
+		"9": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/context.ts",
+			"qualifiedName": "AnalyticsContextValue"
+		},
+		"10": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/context.ts",
+			"qualifiedName": "AnalyticsContextValue.adapter"
+		},
+		"11": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/context.ts",
+			"qualifiedName": "AnalyticsContextValue.context"
+		},
+		"12": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/hooks.ts",
+			"qualifiedName": "TrackFn"
+		},
+		"13": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/hooks.ts",
+			"qualifiedName": "__type"
+		},
+		"14": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/hooks.ts",
+			"qualifiedName": "__type"
+		},
+		"15": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/hooks.ts",
+			"qualifiedName": "eventName"
+		},
+		"16": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/hooks.ts",
+			"qualifiedName": "properties"
+		},
+		"17": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/hooks.ts",
+			"qualifiedName": "useAnalytics"
+		},
+		"18": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/hooks.ts",
+			"qualifiedName": "useAnalytics"
+		},
+		"19": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/hooks.ts",
+			"qualifiedName": "useTrack"
+		},
+		"20": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/hooks.ts",
+			"qualifiedName": "useTrack"
+		}
+	},
+	"files": {
+		"entries": {
+			"1": "src/index.ts"
+		},
+		"reflections": {
+			"1": 0
+		}
+	}
+}
