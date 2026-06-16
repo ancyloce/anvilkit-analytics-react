@@ -1,0 +1,14 @@
+[
+	{
+		"name": "@anvilkit/analytics-react",
+		"path": "dist/index.js",
+		"limit": "5 KB",
+		"gzip": true,
+		"ignore": [
+			"react",
+			"react-dom",
+			"react/jsx-runtime",
+			"react/jsx-dev-runtime"
+		]
+	}
+]
