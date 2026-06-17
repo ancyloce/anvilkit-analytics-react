@@ -1,3 +1,5 @@
+"use client";
+
 import type { AnalyticsAdapter } from "@anvilkit/analytics-core";
 import { useCallback, useContext } from "react";
 import { AnalyticsContext, NOOP_ADAPTER } from "./context.js";

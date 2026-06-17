@@ -1,3 +1,5 @@
+"use client";
+
 import type { AnalyticsAdapter, BaseEventData } from "@anvilkit/analytics-core";
 import { createNoopAdapter } from "@anvilkit/analytics-core";
 import { createContext } from "react";

@@ -10,3 +10,7 @@ export {
 } from "./AnalyticsProvider.js";
 export type { AnalyticsBaseContext, AnalyticsContextValue } from "./context.js";
 export { type TrackFn, useAnalytics, useTrack } from "./hooks.js";
+export {
+	type ComponentTrackingProps,
+	useComponentTrack,
+} from "./use-component-track.js";
