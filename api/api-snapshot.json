@@ -198,6 +198,152 @@
 			]
 		},
 		{
+			"id": 21,
+			"name": "ComponentTrackingProps",
+			"variant": "declaration",
+			"kind": 256,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "The declarative tracking fields a component exposes (PRD 0004 F13 / §5.8).\nAll optional + serializable — a component spreads matching Puck fields into\nits config and passes the props here."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 23,
+					"name": "eventName",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true,
+						"isReadonly": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Event name; defaults to "
+							},
+							{
+								"kind": "code",
+								"text": "`${slug}_click`"
+							},
+							{
+								"kind": "text",
+								"text": "."
+							}
+						]
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 24,
+					"name": "eventProps",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true,
+						"isReadonly": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Extra properties merged into the event. Non-strings are dropped."
+							}
+						]
+					},
+					"type": {
+						"type": "reference",
+						"target": {
+							"packageName": "typescript",
+							"packagePath": "lib/lib.es5.d.ts",
+							"qualifiedName": "Readonly"
+						},
+						"typeArguments": [
+							{
+								"type": "reference",
+								"target": {
+									"packageName": "typescript",
+									"packagePath": "lib/lib.es5.d.ts",
+									"qualifiedName": "Record"
+								},
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									},
+									{
+										"type": "union",
+										"types": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											},
+											{
+												"type": "intrinsic",
+												"name": "undefined"
+											}
+										]
+									}
+								],
+								"name": "Record",
+								"package": "typescript"
+							}
+						],
+						"name": "Readonly",
+						"package": "typescript"
+					}
+				},
+				{
+					"id": 22,
+					"name": "trackClick",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true,
+						"isReadonly": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Fire "
+							},
+							{
+								"kind": "code",
+								"text": "`eventName`"
+							},
+							{
+								"kind": "text",
+								"text": " on the component's primary interaction. Default off."
+							}
+						]
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						23,
+						24,
+						22
+					]
+				}
+			]
+		},
+		{
 			"id": 8,
 			"name": "AnalyticsBaseContext",
 			"variant": "declaration",
@@ -521,6 +667,127 @@
 			]
 		},
 		{
+			"id": 25,
+			"name": "useComponentTrack",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"signatures": [
+				{
+					"id": 26,
+					"name": "useComponentTrack",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Shared per-component tracking helper. Returns a stable handler that fires\n"
+							},
+							{
+								"kind": "code",
+								"text": "`eventName`"
+							},
+							{
+								"kind": "text",
+								"text": " (default "
+							},
+							{
+								"kind": "code",
+								"text": "`${slug}_click`"
+							},
+							{
+								"kind": "text",
+								"text": ") with "
+							},
+							{
+								"kind": "code",
+								"text": "`eventProps`"
+							},
+							{
+								"kind": "text",
+								"text": " when "
+							},
+							{
+								"kind": "code",
+								"text": "`trackClick`"
+							},
+							{
+								"kind": "text",
+								"text": " is\non — a no-op when it's off OR when no "
+							},
+							{
+								"kind": "code",
+								"text": "`AnalyticsProvider`"
+							},
+							{
+								"kind": "text",
+								"text": " is mounted (via\n"
+							},
+							{
+								"kind": "code",
+								"text": "`useTrack`"
+							},
+							{
+								"kind": "text",
+								"text": "). A context hook only: no data fetch, identical render either way,\nso the pure-component invariant holds."
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 27,
+							"name": "slug",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 28,
+							"name": "__namedParameters",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"target": 21,
+								"name": "ComponentTrackingProps",
+								"package": "@anvilkit/analytics-react"
+							}
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 29,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {},
+							"signatures": [
+								{
+									"id": 30,
+									"name": "__type",
+									"variant": "signature",
+									"kind": 4096,
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						}
+					}
+				}
+			]
+		},
+		{
 			"id": 19,
 			"name": "useTrack",
 			"variant": "declaration",
@@ -574,7 +841,8 @@
 			"title": "Interfaces",
 			"children": [
 				9,
-				4
+				4,
+				21
 			]
 		},
 		{
@@ -589,6 +857,7 @@
 			"children": [
 				1,
 				17,
+				25,
 				19
 			]
 		}
@@ -699,6 +968,56 @@
 			"packageName": "@anvilkit/analytics-react",
 			"packagePath": "src/hooks.ts",
 			"qualifiedName": "useTrack"
+		},
+		"21": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/use-component-track.ts",
+			"qualifiedName": "ComponentTrackingProps"
+		},
+		"22": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/use-component-track.ts",
+			"qualifiedName": "ComponentTrackingProps.trackClick"
+		},
+		"23": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/use-component-track.ts",
+			"qualifiedName": "ComponentTrackingProps.eventName"
+		},
+		"24": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/use-component-track.ts",
+			"qualifiedName": "ComponentTrackingProps.eventProps"
+		},
+		"25": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/use-component-track.ts",
+			"qualifiedName": "useComponentTrack"
+		},
+		"26": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/use-component-track.ts",
+			"qualifiedName": "useComponentTrack"
+		},
+		"27": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/use-component-track.ts",
+			"qualifiedName": "slug"
+		},
+		"28": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/use-component-track.ts",
+			"qualifiedName": "__1"
+		},
+		"29": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/use-component-track.ts",
+			"qualifiedName": "__type"
+		},
+		"30": {
+			"packageName": "@anvilkit/analytics-react",
+			"packagePath": "src/use-component-track.ts",
+			"qualifiedName": "__type"
 		}
 	},
 	"files": {
