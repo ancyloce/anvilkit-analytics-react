@@ -1,3 +1,5 @@
+"use client";
+
 import type { AnalyticsAdapter } from "@anvilkit/analytics-core";
 import type { ReactElement, ReactNode } from "react";
 import { useMemo } from "react";
