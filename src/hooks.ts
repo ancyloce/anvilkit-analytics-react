@@ -1,7 +1,7 @@
 "use client";
 
 import type { AnalyticsAdapter } from "@anvilkit/analytics-core";
-import { useCallback, useContext } from "react";
+import { use, useCallback } from "react";
 import { AnalyticsContext, NOOP_ADAPTER } from "./context.js";
 
 /**
@@ -9,7 +9,7 @@ import { AnalyticsContext, NOOP_ADAPTER } from "./context.js";
  * {@link AnalyticsProvider} is mounted.
  */
 export function useAnalytics(): AnalyticsAdapter {
-	const value = useContext(AnalyticsContext);
+	const value = use(AnalyticsContext);
 	return value?.adapter ?? NOOP_ADAPTER;
 }
 
@@ -25,7 +25,7 @@ export type TrackFn = (
  * {@link AnalyticsProvider} is mounted.
  */
 export function useTrack(): TrackFn {
-	const value = useContext(AnalyticsContext);
+	const value = use(AnalyticsContext);
 	return useCallback<TrackFn>(
 		(eventName, properties) => {
 			if (value === null) return; // no provider → no-op, no adapter call
