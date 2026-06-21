@@ -12,6 +12,9 @@ React provider + hooks for AnvilKit Studio analytics. Wraps an
   provider is mounted.
 - **`useTrack()`** — a `track(eventName, properties?)` bound to the provider; a
   genuine no-op (no adapter call) when no provider is mounted.
+- **`useComponentTrack(slug, props)`** — per-component helper returning a stable
+  click handler that fires `${slug}_click` (or `props.eventName`) when
+  `props.trackClick` is on; a no-op otherwise or with no provider mounted.
 
 ```tsx
 import { AnalyticsProvider, useTrack } from "@anvilkit/analytics-react";
