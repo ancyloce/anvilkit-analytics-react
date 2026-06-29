@@ -1,6 +1,6 @@
 import type { AnalyticsAdapter } from "@anvilkit/analytics-core";
 import { act, cleanup, renderHook } from "@testing-library/react";
-import type { ReactNode } from "react";
+import React, { type ReactNode } from "react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { AnalyticsProvider } from "../AnalyticsProvider.js";
 import { useAnalytics, useTrack } from "../hooks.js";
